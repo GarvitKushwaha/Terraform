@@ -20,12 +20,7 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         sh '''#!/bin/bash
-           "Hello Folder"
-           mkdir project
-           
-               
-         ''' 
+                         powershell 'mkdir sample'
 
                  }
             }   
