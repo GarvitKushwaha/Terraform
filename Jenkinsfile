@@ -10,7 +10,7 @@ stages {
                  script{
 
                         
-                            git "https://github.com/GarvitKushwaha/Terra-Ansi-jFrog.git"			    
+                            git "https://github.com/GarvitKushwaha/Terraform.git"			    
                         
                     }
                 }
