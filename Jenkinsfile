@@ -21,9 +21,9 @@ stages {
                  steps{
                          echo "Hello World"
                          sh '''#!/bin/bash
-           rm -rf ./project
-           mkdir project
-           git -C ./project clone https://github.com/Abishek-Ravichander/Manavae-web-app-2.git                 
+       
+# Print Hello world message
+echo "Hello World!"           
          '''                 
            sh "cd ./project/Manavae-web-app-2/Java-Ansible && mvn clean package"
 
