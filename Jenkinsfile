@@ -18,11 +18,8 @@ stages {
         
          stage('Maven - WAR creation') {
             steps {
-                    sh '''#!/bin/bash
-                 rm -rf ./project
-                 mkdir project
-                               
-         '''                 
+                   
+                                          
                  
                 }
             }   
