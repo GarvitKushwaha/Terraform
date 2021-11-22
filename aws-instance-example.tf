@@ -1,10 +1,10 @@
 resource "aws_instance" "web1" {
-   ami           = "ami-04ad2567c9e3d7893"
+   ami           = "ami-0c2b8ca1dad447f8a"
    instance_type = "t2.micro"
    count = 1
-  vpc_security_group_ids = ["sg-050c66b16eccd3620"]
-   key_name               = "Linux_Terraform-Chef" 
-   iam_instance_profile =   "myManagedInstanceRole"
+  vpc_security_group_ids = ["sg-044e8053d4b2ea578"]
+   key_name               = "AWS_Terraform" 
+   iam_instance_profile =   "Sample"
    user_data = <<-EOF
       #!/bin/bash     
       sudo amazon-linux-extras install ansible2 -y
