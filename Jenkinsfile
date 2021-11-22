@@ -49,7 +49,7 @@ git -C ./project clone https://github.com/GarvitKushwaha/Maven-web-app.git
 
         stage('Terraform Apply') {
             steps {
-                    withCredentials([vaultString(credentialsId: 'AWS_ACCESS_KEY_VAULT', variable: 'AWS_ACCESS_KEY_ID'), vaultString(credentialsId: 'AWS_SECRET_ACCESS_KEY_VAULT', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    withCredentials([vaultString(credentialsId: 'AWS_ACCESS_KEY_VAULT', variable: 'AWS_ACCESS_KEY'), vaultString(credentialsId: 'AWS_SECRET_KEY_VAULT', variable: 'AWS_SECRET_KEY')]) {
                 bat "cd&cd terraform/Terraform & terraform apply -input=false tfplan"
                     }
             }
