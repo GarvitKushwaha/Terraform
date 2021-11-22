@@ -20,12 +20,12 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         sh '''#!/bin/bash
+                         bat '''#!/bin/bash
        
 # Print Hello world message
 echo "Hello World!"           
          '''                 
-           sh "cd ./project/Manavae-web-app-2/Java-Ansible && mvn clean package"
+       
 
 
                  }
