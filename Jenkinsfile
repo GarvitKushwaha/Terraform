@@ -17,11 +17,7 @@ stages {
             }      
         
          stage('Maven - WAR creation') {
-            steps {
-                   
-                                          
-                 
-                }
+            
             }   
         
 
