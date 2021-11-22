@@ -29,7 +29,30 @@ git -C ./project clone https://github.com/Abishek-Ravichander/Manavae-web-app-2.
 
 
                  }
-            }   
+            }  
+         stage('jFrog artifactory'){
+        steps{
+                sh "cd ./project/Maven-web-app/Java-Ansible && mvn deploy"
+        }
+        }
+        stage('Terraform Plan') {
+            steps {
+                     withCredentials([vaultString(credentialsId: 'AWS_ACCESS_KEY_VAULT', variable: 'AWS_ACCESS_KEY'), vaultString(credentialsId: 'AWS_SECRET_KEY_VAULT', variable: 'AWS_SECRET_KEY')]) {
+                bat 'cd&cd terraform/Terraform & terraform init -input=false'
+                bat 'cd&cd terraform/Terraform & terraform destroy -auto-approve'
+                bat "cd&cd terraform/Terraform & terraform plan -input=false -out tfplan"
+                bat 'cd&cd terraform/Terraform & terraform show -no-color tfplan > tfplan.txt'
+                     }
+            }
+        }
+       
+
+        stage('Terraform Apply') {
+            steps {
+                    withCredentials([vaultString(credentialsId: 'AWS_ACCESS_KEY_VAULT', variable: 'AWS_ACCESS_KEY_ID'), vaultString(credentialsId: 'AWS_SECRET_ACCESS_KEY_VAULT', variable: 'AWS_SECRET_ACCESS_KEY')]) {
+                bat "cd&cd terraform/Terraform & terraform apply -input=false tfplan"
+                    }
+            }
         
 
         
