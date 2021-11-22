@@ -20,10 +20,9 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         bat '''#!/bin/bash
-       
-# Print Hello world message
-echo "Hello World!"           
+                         bat '''rm -rf ./project
+
+           mkdir project
          '''                 
        
 
