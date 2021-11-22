@@ -20,7 +20,7 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         mkdir Project"
+                         mkdir Project
                  }
             }   
         
