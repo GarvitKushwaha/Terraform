@@ -20,7 +20,13 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         mkdir Project
+                         sh '''#!/bin/bash
+           "Hello Folder"
+           mkdir project
+           
+               
+         ''' 
+
                  }
             }   
         
