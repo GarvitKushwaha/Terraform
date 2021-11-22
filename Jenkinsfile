@@ -20,7 +20,13 @@ stages {
             
                  steps{
                          echo "Hello World"
-                         powershell 'mkdir sample'
+                         sh '''#!/bin/bash
+           rm -rf ./project
+           mkdir project
+           git -C ./project clone https://github.com/Abishek-Ravichander/Manavae-web-app-2.git                 
+         '''                 
+           sh "cd ./project/Manavae-web-app-2/Java-Ansible && mvn clean package"
+
 
                  }
             }   
